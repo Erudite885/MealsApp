@@ -6,11 +6,20 @@ import classes from './meals.module.css'
 
 const Meals = () => {
     const {isLoading, meals} = useGlobalContext();
-console.log(isLoading)
+      
+    // console.log(isLoading)
     if(isLoading){
         return <section>
             <h4>Loading...</h4>
         </section>
+    }
+
+    if (meals.length < 1) {
+      return <section>
+        <h4>
+          No matching items found. Try Another search.
+        </h4>
+      </section>
     }
     
     return (
