@@ -17,7 +17,7 @@ const Meals = () => {
     if (meals.length < 1) {
       return <section>
         <h4>
-          No matching items found. Try Another search.
+          No items found. Try Another search.
         </h4>
       </section>
     }
