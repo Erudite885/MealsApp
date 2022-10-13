@@ -1,10 +1,11 @@
 import React from 'react';
+import {BsHandThumbsUp} from 'react-icons/bs'
 import { useGlobalContext } from '../store/context'
 
 import classes from './meals.module.css'
 
 const Meals = () => {
-    const {meals} = useGlobalContext()
+    const {meals} = useGlobalContext();
     
     return (
         <section className={classes.sectionCenter}>
@@ -20,7 +21,9 @@ const Meals = () => {
                     />
                     <footer>
                       <h5>{title}</h5>
-                      <button className={classes.likeBtn}>Like</button>
+                      <button className={classes.likeBtn}>
+                        <BsHandThumbsUp />
+                      </button>
                     </footer>
                   </article>
                 );
