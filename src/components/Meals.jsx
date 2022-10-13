@@ -1,11 +1,31 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useGlobalContext } from '../store/context'
 
+import classes from './meals.module.css'
+
 const Meals = () => {
-    const context = useGlobalContext()
-    console.log(context)
+    const {meals} = useGlobalContext()
+    
     return (
-        <h1>Meals</h1>
+        <section className={classes.sectionCenter}>
+            {meals.map((meal)=>{
+                const { idMeal, strMeal: title, strMealThumb: img } = meal
+                return (
+                  <article key={idMeal} className={classes.singleMeal}>
+                    <img
+                      src={img}
+                      alt={`${title} image`}
+                    //   style={{ width: "200px" }}
+                      className={classes.img}
+                    />
+                    <footer>
+                      <h5>{title}</h5>
+                      <button className={classes.likeBtn}>Like</button>
+                    </footer>
+                  </article>
+                );
+            })}
+        </section>
     )
 }
 
