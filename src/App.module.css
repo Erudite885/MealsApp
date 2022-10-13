@@ -1,6 +1,7 @@
 .wrapper {
-    color: #fff;
-    background-color: #000;
+    /* color: red; */
+    /* background-color: #000; */
     width: 100%;
     overflow: hidden;
+    /* color:var(--red-dark); */
 }
