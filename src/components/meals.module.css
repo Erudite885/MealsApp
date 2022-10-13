@@ -1,0 +1,66 @@
+.sectionCenter {
+    padding: 3rem;
+    width: 90vh;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2em;
+}
+
+.singleMeal {
+    background: var(--white);
+    color: var(--text-color);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow2);
+    transition: var(--transition)
+}
+
+.singleMeal:hover {
+    box-shadow: var(--shadow4);
+}
+
+.img {
+    width: 100%;
+    display: block;
+    object-fit:cover;
+}
+
+.singleMeal img {
+    height: 15rem;
+    cursor:pointer;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+.singleMeal footer {
+    padding: 1rem 1.5rem;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.likeBtn {
+    background: transparent;
+    border: transparent;
+    font-size: 5rem;
+    cursor:pointer;
+    transition: var(--transition);
+}
+
+.likeBtn:hover {
+    color: var(--red-dark);
+    transform:translateY(-2px);
+}
+
+@media screen and (min-width: 768px) {
+    .sectionCenter{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .sectionCenter {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
