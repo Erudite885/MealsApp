@@ -32,7 +32,14 @@ const AppProvider = ({children}) => {
         setIsLoading(false);
         // fetchData()
     }
+
     useEffect(() => {
+        fetchMeals(allMealsUrl)
+    }, [])
+
+
+    useEffect(() => {
+        if (!searchTerm) return
        console.log(fetchMeals(`${allMealsUrl}${searchTerm}`));
     }, [searchTerm])
 
