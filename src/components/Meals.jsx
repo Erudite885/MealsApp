@@ -5,7 +5,13 @@ import { useGlobalContext } from '../store/context'
 import classes from './meals.module.css'
 
 const Meals = () => {
-    const {meals} = useGlobalContext();
+    const {isLoading, meals} = useGlobalContext();
+console.log(isLoading)
+    if(isLoading){
+        return <section>
+            <h4>Loading...</h4>
+        </section>
+    }
     
     return (
         <section className={classes.sectionCenter}>
