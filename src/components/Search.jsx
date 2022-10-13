@@ -17,9 +17,14 @@ const Search = () => {
         e.preventDefault();
         if (text){
             setSearchTerm(text);
-            setText('');
         }
     };
+    
+    const handleRandomMeal = () => {
+        setSearchTerm('');
+        setText('');
+        fetchRandomMeal();
+    }
 
     return (
         <header className={classes.searchContainer}>
@@ -40,7 +45,7 @@ const Search = () => {
                 <button 
                     type='button' 
                     className={classes.btnHipster}
-                    onClick={fetchRandomMeal}
+                    onClick={handleRandomMeal}
                 >
                     Random Suggestion
                 </button>
