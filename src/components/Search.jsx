@@ -5,7 +5,7 @@ import classes from "./search.module.css";
 
 const Search = () => {
 
-    const { setSearchTerm } = useGlobalContext()
+    const { setSearchTerm, fetchRandomMeal } = useGlobalContext()
     const [text, setText] = useState('');
 
     const handleChange = (e) => {
@@ -40,6 +40,7 @@ const Search = () => {
                 <button 
                     type='button' 
                     className={classes.btnHipster}
+                    onClick={fetchRandomMeal}
                 >
                     Random Suggestion
                 </button>
