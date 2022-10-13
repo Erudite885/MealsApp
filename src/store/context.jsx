@@ -8,7 +8,7 @@ export const useGlobalContext = () => {
 }
 
 const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
-const randomMealsUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
+const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({children}) => {
     
@@ -36,8 +36,12 @@ const AppProvider = ({children}) => {
        console.log(fetchMeals(`${allMealsUrl}${searchTerm}`));
     }, [searchTerm])
 
+    const fetchRandomMeal = () => {
+        console.log(fetchMeals(randomMealUrl));
+    }
+
     return (
-    <AppContext.Provider value={{ setSearchTerm, isLoading, meals }}>
+    <AppContext.Provider value={{ fetchRandomMeal, setSearchTerm, isLoading, meals }}>
         {children}
     </AppContext.Provider>
 )}
